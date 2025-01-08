@@ -392,6 +392,7 @@ public class PooledDataSource implements DataSource {
 
     lock.lock();
     try {
+      // 从激活的连接集合中移除该连接
       state.activeConnections.remove(conn);
       if (conn.isValid()) {
         if (state.idleConnections.size() < poolMaximumIdleConnections

@@ -236,6 +236,7 @@ public class UnpooledDataSource implements DataSource {
         Class<?> driverType;
         try {
           if (driverClassLoader != null) {
+            // 获得 driver 类，实际上，就是我们常见的 "Class.forName("com.mysql.jdbc.Driver")"
             driverType = Class.forName(x, true, driverClassLoader);
           } else {
             driverType = Resources.classForName(x);

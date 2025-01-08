@@ -25,6 +25,7 @@ import java.sql.SQLException;
  */
 public interface TypeHandler<T> {
 
+  // 是 Java Type => JDBC Type 的过程。
   void setParameter(PreparedStatement ps, int i, T parameter, JdbcType jdbcType) throws SQLException;
 
   /**
@@ -42,6 +43,7 @@ public interface TypeHandler<T> {
    */
   T getResult(ResultSet rs, String columnName) throws SQLException;
 
+  // JDBC Type => Java Type 的过程。
   T getResult(ResultSet rs, int columnIndex) throws SQLException;
 
   T getResult(CallableStatement cs, int columnIndex) throws SQLException;
