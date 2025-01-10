@@ -63,6 +63,7 @@ public abstract class BaseBuilder {
     return new HashSet<>(Arrays.asList(value.split(",")));
   }
 
+  // 解析对应的 JdbcType 类型
   protected JdbcType resolveJdbcType(String alias) {
     try {
       return alias == null ? null : JdbcType.valueOf(alias);
